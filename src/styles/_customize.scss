@@ -1,0 +1,131 @@
+@mixin xl {
+    @media all and (min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media all and (max-width: 1279px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media all and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media all and (max-width: 576px) {
+        @content;
+    }
+}
+
+.outer {
+    @include boxSizing;
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 1280px;
+    min-width: 1000px;
+    overflow-y: auto;
+    margin: auto;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    @include lg {
+        max-width: 1200px;
+    }
+}
+
+.data_row {
+    display: flex;
+    align-items: stretch;
+}
+
+.country_items {
+    @include boxSizing;
+    @include flexBox(column);
+    @include flexAlign(center, flex-start);
+    @include easeInOutQuint(0.3s);
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    background: linear-gradient(#fefefe, #efefef);
+    &:hover {
+        @include easeInOutQuint(0.3s);
+        box-shadow: #333 0 0 10px;
+    }
+    b {
+        font-weight: bold;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin: 0 0.5rem;
+        cursor: pointer;
+        &:hover {
+            color: #06C;
+        }
+    }
+
+    .info {
+        display: block;
+        width: 100%;
+        line-height: 1.5;
+        span {
+            display: block;
+            font-size: 0.7rem;
+            color: #666;
+        }
+        
+    }
+}
+
+.tags {
+    padding: 0.3rem;
+    font-size: 0.7rem;
+    text-align: center;
+    min-width: 3rem;
+    color: rgb(20, 153, 27);
+    border: 1px solid rgb(20, 153, 27);
+    border-radius: 20px;
+    background-color: rgb(250, 231, 144);
+    margin-right: 0.3rem;
+}
+
+.sortable_handler {
+    @include flexBox(row);
+    @include flexAlign(center, flex-start);
+    @include boxSizing;
+    padding: 0.3rem 1.5rem;
+    font-size: 0.7rem;
+    color: #fff;
+    background: rgb(22, 133, 243);
+    border-radius: 20px;
+    cursor: pointer;
+    &:hover {
+        background: rgb(27, 102, 177);
+    }
+    &::after {
+        content: "";
+        position: relative;
+        top: 50%;
+        left: 0.5rem;
+        transform: translateY(-100%);
+        display: block;
+        border-top: 6px solid transparent;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 6px solid #fff;
+        
+    }
+    &.toggled {
+        &::after {
+            transform: translateY(-50%);
+            border-top: 6px solid #fff;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+    }
+}

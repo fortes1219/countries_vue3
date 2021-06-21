@@ -1,0 +1,13 @@
+.el-customize {
+	.el-form--label-left .el-form-item__label {
+		@include boxSizing;
+		padding: 0 0.5rem;
+		background-color: rgb(106, 124, 41);
+		color: #fff;
+	}
+	.el-form-item__content {
+		@include boxSizing;
+		padding: 0 0.5rem;
+		background-color: rgb(236, 241, 214);
+	}
+}
