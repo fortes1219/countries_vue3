@@ -9,7 +9,7 @@ cd dist
 git init 
 git add -A
 git commit -m 'deploy'
-# 部署到 https://github.com/fortes1219/countries_test.git 分支為 gh-pages
-git push -f https://github.com/fortes1219/countries_test.git master:gh-pages
+# 部署到 https://github.com/fortes1219/countries_vue3.git 分支為 gh-pages
+git push -f https://github.com/fortes1219/countries_vue3.git master:gh-pages
 #將dist資料夾中的內容推送至遠端的gh-pages分支中，並強制無條件將舊有的內容取代成目前的內容（指令 git push -f)
 cd -
