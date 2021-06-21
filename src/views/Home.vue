@@ -117,7 +117,7 @@
           <el-form-item label="Cioc">{{dialogInfo.cioc}}</el-form-item>
         </el-form>
       </div>
-      <span class="dialog-footer">
+      <span class="dialog-footer row horizontal end" data-space-top="1rem">
         <el-button type="primary" @click="showDialog = false">Close</el-button>
       </span>
     </el-dialog>
