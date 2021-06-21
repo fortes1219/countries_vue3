@@ -208,8 +208,10 @@ export default {
     }
 
     const closeDialog = () => {
+      showDialog.value = false
       dialogInfo.value = {}
       translations.value = []
+      console.log('####CLOSE: ', dialogInfo.value)
     }
 
     return {
