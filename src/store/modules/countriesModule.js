@@ -62,7 +62,7 @@ export const mutations = {
 
 export const actions = {
   async FETCH_API(context, payload) {
-    let source = context.state.searchKeywords !=='' ? `https://restcountries.eu/rest/v2/name/${context.state.searchKeywords}?fullText=false` : 'https://restcountries.eu/rest/v2/all'
+    let source = context.state.searchKeywords !=='' ? `https://restcountries.com/v2/name/${context.state.searchKeywords}?fullText=false` : 'https://restcountries.com/v2/all'
     const res = await request.get(source)
     if (res) {
       payload = res

@@ -52,8 +52,8 @@
           </div>
           <div class="info">
             <span>{{ item.nativeName }}</span>
-            <span>{{ item.altSpellings.join(', ') }}</span>
-            <span>{{ item.callingCodes.join(', ') }}</span>
+            <span>{{ item.altSpellings ? item.altSpellings.join(', ') : '' }}</span>
+            <span>{{ item.callingCodes ? item.callingCodes.join(', '): '' }}</span>
           </div>
         </div>
       </div>
